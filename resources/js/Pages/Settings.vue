@@ -1,22 +1,17 @@
 <template>
-    <div>
-        <h1>Settings</h1>
-    </div>
+    <Layout>
+        <h1 class="text-3xl">Settings</h1>
+    </Layout>
+
+    <Nav />
 </template>
 
 <script>
 
+import Layout from "../Shared/Layout";
 export default {
     name: 'Settings',
 
-    data() {
-        return {};
-    },
-
-    methods: {},
+    components: {Layout},
 }
 </script>
-
-<style>
-
-</style>
