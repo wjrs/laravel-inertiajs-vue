@@ -1,7 +1,7 @@
 <template>
     <div>
         <nav>
-            <ul class="flex list-disc space-x-4 list-inside">
+            <ul class="flex space-x-6">
                 <li>
                     <NavLink
                         href="/"
@@ -32,7 +32,7 @@
                         method="post"
                         :data="{foo: 'bar'}"
                         as="button"
-                        class="text-blue-500 hover:underline"
+                        class="text-black hover:underline"
                     >
                         Logout
                     </Link>
