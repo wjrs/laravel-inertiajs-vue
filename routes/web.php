@@ -19,7 +19,17 @@ Route::get('/', function () {
 });
 Route::get('/users', function () {
     return Inertia::render('Users', [
-        'time' => now()->toTimeString()
+        'users' => \App\Models\User::query()
+            ->when(request('search'), function ($query, $search) {
+                $query->where('name', 'like', "%$search%");
+            })
+            ->paginate(10)
+            ->withQueryString()
+            ->through(fn($user) => [
+                'id' => $user->id,
+                'name' => $user->name,
+            ]),
+        'filters' => request()->only(['search'])
     ]);
 });
 Route::get('/settings', function () {
