@@ -27,15 +27,12 @@
                     </NavLink>
                 </li>
                 <li>
-                    <Link
+                    <NavLink
                         href="/logout"
                         method="post"
-                        :data="{foo: 'bar'}"
-                        as="button"
-                        class="text-black hover:underline"
                     >
                         Logout
-                    </Link>
+                    </NavLink>
                 </li>
             </ul>
         </nav>
@@ -43,12 +40,11 @@
 </template>
 
 <script>
-import {Link} from "@inertiajs/inertia-vue3";
 import NavLink from "./NavLink";
 
 export default {
     name: 'Nav',
 
-    components: {NavLink, Link},
+    components: {NavLink},
 }
 </script>
